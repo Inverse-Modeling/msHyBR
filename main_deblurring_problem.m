@@ -52,7 +52,7 @@ bn = b + sqrt(sigma_r)*randn(n,1);
 % Naive solution
 x_naive = H\bn;
 
-% New solver - ssHyBR
+% New solver - msHyBR
 maxit = 50;
 solver = 'tikhonov';
 regpar = 'optimal';

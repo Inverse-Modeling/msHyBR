@@ -39,7 +39,7 @@ plot(domain,x_true,'-','LineWidth',lw,'Color','k')
 hold on
 plot(domain,x_ss, '--','LineWidth',lw,'Color',c2)
 axis([0 1 -0.15 2.5])
-xl=legend('true', 'ssHyBR');
+xl=legend('true', 'msHyBR');
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
 xl.Position(1) = xl.Position(1) - 0.04;
 saveas(gcf,['Figures/',exp_name,'_reconstructions'],'epsc')
@@ -54,7 +54,7 @@ plot(domain,s_forward_BIC, '-.','LineWidth',lw,'Color',c3)
 plot(domain,s_forward_AIC, ':','LineWidth',lw,'Color', c7)
 title('solutions of forward selection methods')
 axis([0 1 -0.15 2.5])
-xl=legend('true', 'ssHyBR', 'forward VT','forward AIC','forward BIC');
+xl=legend('true', 'msHyBR', 'forward VT','forward AIC','forward BIC');
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
 xl.Position(1) = xl.Position(1) - 0.06;
 saveas(gcf,['Figures/',exp_name,'_reconstructions2'],'epsc')
@@ -68,7 +68,7 @@ plot(domain,s_exhaustive_BIC, '-.','LineWidth',lw,'Color',c3)
 plot(domain,s_exhaustive_AIC, ':','LineWidth',lw,'Color', c7)
 axis([0 1 -0.15 2.5])
 title('solutions of exhaustive selection methods')
-xl=legend('true', 'ssHyBR', 'exhaustive AIC','exhaustive BIC');
+xl=legend('true', 'msHyBR', 'exhaustive AIC','exhaustive BIC');
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
 xl.Position(1) = xl.Position(1) - 0.06;
 saveas(gcf,['Figures/',exp_name,'_reconstructions3'],'epsc')
@@ -80,7 +80,7 @@ figure
 plot(beta_true,'-','LineWidth',lw,'Color','k')
 hold on
 plot(beta_ss,'--','LineWidth',lw,'Color',c2);
-xl= legend('true', 'ssHyBR');
+xl= legend('true', 'msHyBR');
 title('beta for forward methods')
 axis([1 7 -0.4 1.45])
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
@@ -96,7 +96,7 @@ plot(beta_ss,'--','LineWidth',lw,'Color',c2)
 plot(beta_forward_VT_for_comparison,'-','LineWidth',lw, 'Color',c1)
 plot(beta_forward_BIC_for_comparison,'-.','LineWidth',lw, 'Color',c3)
 plot(beta_forward_AIC_for_comparison,':','LineWidth',lw, 'Color',c7)
-xl=legend('true', 'ssHyBR', 'forward VT','forward AIC','forward BIC');
+xl=legend('true', 'msHyBR', 'forward VT','forward AIC','forward BIC');
 title('beta for forward methods')
 axis([1 7 -0.4 1.45])
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
@@ -112,7 +112,7 @@ plot(beta_exhaustive_BIC_for_comparison,'-.','LineWidth',lw,'Color',c3)
 plot(beta_exhaustive_AIC_for_comparison,':','LineWidth',lw,'Color',c7)
 title('beta for exhaustive methods')
 axis([1 7 -0.4 1.45])
-xl=legend('true', 'ssHyBR','exhaustive AIC','exhaustive BIC');
+xl=legend('true', 'msHyBR','exhaustive AIC','exhaustive BIC');
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
 xl.Position(1) = xl.Position(1) - 0.40;
 xl.Position(2) = xl.Position(2) + 0.01;
@@ -123,7 +123,7 @@ saveas(gcf,['Figures/',exp_name,'_betas3'],'epsc')
 figure
 hold on
 plot(output_ss.Enrm, '--','LineWidth',lw,'Color',c2)
-legend('\bf ssHyBR','interpreter','latex','FontSize',fs);
+legend('\bf msHyBR','interpreter','latex','FontSize',fs);
 xlabel('{\bf iterations}','interpreter','latex','FontSize',fs) 
 ylabel('{\bf error norm}','interpreter','latex','FontSize',fs) 
 set(findall(gcf,'-property','FontSize'),'FontSize',fs)
