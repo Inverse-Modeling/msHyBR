@@ -16,8 +16,7 @@ domain = linspace(0,1,n);
 X = zeros(n,n_cols);
 for i=1:n_cols-2
     X(:,i)=chebyshevT(i-1,domain);
-end
-% 
+end 
 X(1:50,n_cols-1) = ones(50,1);
 X(51:end,n_cols) = ones(50,1);
 
@@ -28,7 +27,7 @@ beta_true = [1, 0, 0,1,0,1,0]';
 
 x_true = X*beta_true;
 
-% Build solution covariance - Typical Matern covariance kernel
+% Build solution covariance, this is a Matern covariance kernel
 [x1,x2] = meshgrid(domain);
 matern_R = abs(x1-x2);
 Q = 0.01*matern(matern_R,0.5,1); 
@@ -47,7 +46,7 @@ sigma_r = 0.01;
 R = sigma_r*eye(n);
 bn = b + sqrt(sigma_r)*randn(n,1);  
 
-%% Compute solutions % Now with inverse crime
+%% Compute solutions 
 
 % Naive solution
 x_naive = H\bn;
@@ -60,7 +59,7 @@ input = mshybr_set('InSolv', solver, 'RegPar',regpar, 'Iter', maxit,'x_true',x_t
 [x_ss, beta_ss, output_ss] = msHyBR(H, bn, Q, R, X, input);
 
 
-%% COMPARISON: Forward selection + inverse solve
+%% COMPARISON: Forward selection + geostatistical inversion
 [Xhat_forward_VT,info_forward_VT] = forward_selection(X, H, Q, R, bn, 'VT');
 [Xhat_forward_BIC,info_forward_BIC] = forward_selection(X, H, Q, R, bn, 'BIC');
 [Xhat_forward_AIC,info_forward_AIC] = forward_selection(X, H, Q, R, bn, 'AIC');
@@ -77,8 +76,8 @@ beta_forward_AIC_for_comparison = zeros(size(beta_true));
 beta_forward_AIC_for_comparison(info_forward_AIC.indices_selected)=beta_forward_AIC;
 
 
-%% COMPARISON: Exhaustive selection + inverse solve
-% %Compute all possible combinations of columns and measure WSS. 
+%% COMPARISON: Exhaustive selection + geostatistical inversion
+% Compute all possible combinations of columns and measure WSS. 
 [Xhat_exhaustive_BIC,info_exhaustive_BIC] = exhaustive_selection(X, H, Q, R, bn, 'BIC');
 [Xhat_exhaustive_AIC,info_exhaustive_AIC] = exhaustive_selection(X, H, Q, R, bn, 'AIC');
 
