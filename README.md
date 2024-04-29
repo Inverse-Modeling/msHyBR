@@ -1,5 +1,5 @@
 
-   AUTHORS:
+AUTHORS:
         
         Malena Sabaté Landman, 
         Department of Mathematics, Emory University
@@ -16,17 +16,18 @@
         Arvind K. Saibaba, 
         Department of Mathematics, North Carolina State University
    
-   REFERENCE:
 
-       "An efficient approach to model selection for large scale inverse
-        problems". 2024.
+REFERENCE:
 
-   SOFTWARE LANGUAGE:
+       "A Joint Reconstruction and Model Selection Approach for Large Scale Inverse Modeling". 2024.
+
+
+SOFTWARE LANGUAGE:
 
        MATLAB 9.14 (R2023a)
        
 
-SOFTWARE
+SOFTWARE:
 
     main_deblurring_problem.m       Generate synthetic problem 
                                     Run msHyBR
