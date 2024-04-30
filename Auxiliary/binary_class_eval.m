@@ -1,5 +1,20 @@
 function  [TPR,TNR,PPV, F1, TP, TN, FP, FN] = binary_class_eval(beta_ind, beta_true)
-
+%
+%   Computes different metrics for binary class evaluation
+%
+%   Input:
+%        beta_ind - binary vector 
+%       beta_true - binary vector (of same size)
+%
+%   Output:
+%          TPR - true positive rate
+%          TNR - true positive rate (or sensitivity)
+%          PPV - positive predictive value
+%          F1 - F score (harmonic mean of the precision and recall.)
+%          TP - number of true positives 
+%          TN - number of true negatives 
+%          FP - number of false positives 
+%          FN - number of false negatives 
 
 P = sum(beta_true == 1);
 N = sum(beta_true == 0);

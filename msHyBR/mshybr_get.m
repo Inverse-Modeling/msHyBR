@@ -20,7 +20,7 @@ function val = sshybr_get(options,name,default,flag)
 %
 %
 %   J.Chung 12/2021
-%
+%   Modified my M. Sabate Landman 04/2024
 
 % undocumented usage for fast access with no error checking
 if (nargin == 4) && isequal(flag,'fast')

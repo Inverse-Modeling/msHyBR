@@ -1,6 +1,5 @@
 function [U, M, T, V, z, lv] = FGGK_selection(A, R, Q, U, M, T, V, L, X)
 %
-% [U, M, T, V, z] = FGGK(A, R, Q, U, M, T, V, L)
 %
 %  Performs one step of the flexible, generalized Golub Kahan process, with
 %  reorthogonalization.

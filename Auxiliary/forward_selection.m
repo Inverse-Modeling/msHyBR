@@ -1,15 +1,31 @@
 function [Xhat,info] = forward_selection(X, H, Q, R, z, method)
-% Input:
-% X of size (n,p)
-% method = 'BIC', 'AIC' or 'VT' 
-% Output:
-% hat(X) = [x0 , x1, ...]
+%
+%   Model selection method to determine which covariates 
+%   (stored in the columns of X) are relevant for a given
+%   inverse problem.
+%
+%   Note: Forwards selection implies that we start with 
+%   0 covariates and we add one at each iteration until 
+%   some stopping criterion is satisfied.
+%
+%   Input:
+%          H - syste matrix H
+%       R, Q - (noise and solution) covariance matrices
+%          X - a fixed matrix that includes possible covariates
+%          z - right-hand side
+%     method - model selection criterion: 'BIC', 'AIC' or 'VT' 
+%
+%   Output:
+%       Xhat - Matrix whose columns are the selected relevant 
+%       covariates (in order)
+%      info.indices_selected - indeces corresponding to the solected
+%      covariates in the original matrix X.
+%
+
 
 [n,p] = size(X);
 
-% Forwards selection implies that we start with 0 columns in Hhat and
-% we add one colum at each iteration. We keep track of the indices with
-% the following variables:
+% We keep track of the indices with the following variables:
 indices_left = 1:p;
 indices_selected = [];
 

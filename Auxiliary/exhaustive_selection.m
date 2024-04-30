@@ -1,10 +1,28 @@
 function [Xhat,info] = exhaustive_selection(X, H, Q, R, z, method)
-
-% Input:
-% X of size (n,p)
-% method = 'BIC', 'AIC' 
-% Output:
-% hat(X) = [x0 , x1, ...]
+%
+%   Model selection method to determine which covariates 
+%   (stored in the columns of X) are relevant for a given
+%   inverse problem.
+%
+%   Note: Exhaustive selection implies that all possible combinations of
+%   covariates are tested. 
+%   Note: this code only works for small problems.
+%
+%   Input:
+%          H - syste matrix H
+%       R, Q - (noise and solution) covariance matrices
+%          X - a fixed matrix that includes possible covariates
+%          z - right-hand side
+%     method - model selection criterion: 'BIC', 'AIC' 
+%
+%   Output:
+%       Xhat - Matrix whose columns are the selected relevant 
+%       covariates (in order)
+%      info.indices_selected - indeces corresponding to the solected
+%      covariates in the original matrix X.
+%      info..WSStable - table of weighted sum of squares associated
+%      to of all possible combinations of covariates.
+%
 
 [n,p] = size(X);
 
