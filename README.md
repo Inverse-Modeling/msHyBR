@@ -48,6 +48,7 @@ SOFTWARE LANGUAGE:
 SOFTWARE:
 
 For Experiment 1, the main drivers include:
+    
     main_deblurring_problem.m       Generate synthetic problem 
                                     Run msHyBR
                                     Run 2 steps process: forward_selection + geostatistical_inversion
@@ -64,6 +65,7 @@ For Experiment 1, the main drivers include:
                                     Save figures in the folder 'Figures'
                                     * Requires running 'main_deblurring_problem.m'
 To run these codes, open a MATLAB command window, and type 
-        >> main_deblurring_problem [press enter/return]
-        >> plots_deblurring_problem [press enter/return]
+     
+     >> main_deblurring_problem [press enter/return]
+     >> plots_deblurring_problem [press enter/return]
 
