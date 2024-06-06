@@ -45,9 +45,7 @@ SOFTWARE LANGUAGE:
        MATLAB 9.14 (R2023a)
        For those without access to MATLAB, Octave provides an alternative platform.  Note that these codes have not been tested in Octave. 
 
-=====================================================================
-SOFTWARE and DATA SETS
-=====================================================================
+SOFTWARE:
 
 For Experiment 1, the main drivers include:
     main_deblurring_problem.m       Generate synthetic problem 
