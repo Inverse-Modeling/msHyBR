@@ -1,6 +1,16 @@
-%
-% Write something about this being Ex 4.2 of [1] \cite{...}
-% Also cite [2] genGK \cite{...}
+
+% This script concerns a synthetic inverse modeling problem where the true 
+% solution features distinct blocks of emissions in different regions of 
+% North America (i.e., using a zonation model)
+
+%   - Load synthetic problem
+%    (Optionally, generate new synthetic data instead running 'generate_synthetic_data.m')
+%   - Run msHyBR
+%   - Run 2 steps process: forward_selection + geostatistical_inversion
+%     (forward selection is done using the 'BIC' method)
+
+% Latest Update by M. Sabaté Landman 06/2024
+
 clear all
 close all
 

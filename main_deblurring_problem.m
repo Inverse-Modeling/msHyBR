@@ -1,3 +1,14 @@
+
+% This script presents a one-dimensional deblurring example where the solution 
+% is a combination of several polynomial functions and it is solved using 
+%   - msHyBR
+%   - Run 2 steps process: forward_selection + geostatistical_inversion
+%     (forward selection is done using the 'BIC', 'AIC' and 'F-test' methods)
+%   - Run 2 steps process: exhaustive_selection + geostatistical_inversion
+%     (exhaustive selection is done using the 'BIC' and 'AIC' methods)
+
+% Latest Update by M. Sabaté Landman 06/2024
+
 clear all
 
 % Add paths

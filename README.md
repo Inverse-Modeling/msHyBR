@@ -37,7 +37,7 @@ AUTHORS:
 
 REFERENCE:
 
-       "A Joint Reconstruction and Model Selection Approach for Large Scale Inverse Modeling". 2024.
+       [1] "A Joint Reconstruction and Model Selection Approach for Large Scale Inverse Modeling". 2024.
 
 
 SOFTWARE LANGUAGE:
@@ -45,9 +45,28 @@ SOFTWARE LANGUAGE:
        MATLAB 9.14 (R2023a)
        For those without access to MATLAB, Octave provides an alternative platform.  Note that these codes have not been tested in Octave. 
 
-SOFTWARE:
 
-For Experiment 1, the main drivers include:
+=====================================================================
+SOFTWARE and DATA SETS
+=====================================================================
+The MainDrivers require the following package:
+
+    "IR tools: A MATLAB Package of Iterative Regularization"
+    by Silvia Gazzola, Per Christian Hansen and James G. Nagy
+    https://github.com/jnagy1/IRtools.git
+
+and require the data sets:
+    
+    "Geostatistical inverse modeling with large atmospheric data: 
+    data files for a case study from OCO-2"
+    by Scot M. Miller, Arvind K. Saibaba, Michael E. Trudeau, 
+    Marikate E. Mountain, and Arlyn E. Andrews
+    https://doi.org/10.5281/zenodo.3241466
+
+     - Put the matrix 'H_all_OCO2.mat' in the folder "Data/" 
+
+
+For Experiment 1 in [1], the main drivers include:
     
     main_deblurring_problem.m       Generate synthetic problem 
                                     Run msHyBR
@@ -58,14 +77,42 @@ For Experiment 1, the main drivers include:
                                     
     plots_deblurring_problem.m      Plot the results from 'main_deblurring_problem.m' including:
                                     - Basis vectors in the problem formulation
-                                    - Solutions Reconstrucions
-                                    - Coefficient Reconstrucions
+                                    - Solutions Reconstructions
+                                    - Coefficient Reconstructions
                                     - Relative error norm histories
                                     - Print out of 'Binary classifier metrics'
                                     Save figures in the folder 'Figures'
                                     * Requires running 'main_deblurring_problem.m'
+
 To run these codes, open a MATLAB command window, and type 
      
      >> main_deblurring_problem [press enter/return]
      >> plots_deblurring_problem [press enter/return]
+
+
+
+For Experiment 2 in [1], the main drivers include:
+
+    generate_synthetic_data.m			Generate synthetic data with the same distribution than the one corresponding to
+						Experiment 2 in [1]. (Note that these do not generate fully reproducible codes)
+   
+    main_atmospheric_synthetic_problem.m       	Load synthetic problem 
+						(Optionally, generate new synthetic data instead running 'generate_synthetic_data.m')
+                                    		Run msHyBR
+                                    		Run 2 steps process: forward_selection + geostatistical_inversion
+                                    		(forward selection is done using the 'BIC' method)
+                                    
+    plots_atmospheric_synthetic_problem.m       Plot the results from 'main_atmospheric_synthetic_problem.m' including:
+                                    		- Representation of the donation model in the problem formulation
+                                    		- Solutions Reconstructions
+                                   		- Coefficient Reconstructions
+                                    		- Relative error norm histories
+                                    		- Representation of the selected basis vectors
+                                    		Save figures in the folder 'Figures'
+                                    		* Requires running 'main_atmospheric_synthetic_problem.m'
+
+To run these codes, open a MATLAB command window, and type 
+     
+     >> main_atmospheric_synthetic_problem [press enter/return]
+     >> plots_atmospheric_synthetic_problem [press enter/return]
 
