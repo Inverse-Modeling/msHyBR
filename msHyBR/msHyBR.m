@@ -654,3 +654,49 @@ err = whole_r/m + 2*sigma*tr/m - sigma^2;
 % s = s1+s2;
 % err = norm(s(land) - xtrue(land));
 end
+
+function err = sdDP(p,M,R,beta,sigma,N)
+%
+% err = sdDP(p,M,R,beta,omega)
+%
+% Input:
+%
+%
+% Output:
+%
+%
+%
+%
+
+tau = 1.1;
+m = size(M,2);
+lambda = p(1);
+alpha = p(2);
+IR = lambda^2*eye(m) + alpha^2*(R'*R);
+GIR = M'*M + IR;
+vector = zeros(m+1,1);
+vector(1) = 1;
+vector = beta*vector;
+Gtb = M'*vector;
+f = GIR\Gtb;
+part_r = M*f - vector;
+whole_r = part_r'*part_r;
+
+% MALENA
+err = abs(whole_r - tau*N);
+
+% MC = GIR\(M'*M);
+% tr  = trace(MC);
+
+%%% err = abs(whole_r - tau^2*sigma^2*N);
+
+% yx = Z*f;
+% n = size(Z,1)/2;
+% s1 = Q*yx(1:n);
+% s2 = L*yx(n+1:end);
+% s = s1+s2;
+% err = norm(s(land) - xtrue(land));
+
+
+%err = abs(norm(part_r)-tau*sigma);
+end
