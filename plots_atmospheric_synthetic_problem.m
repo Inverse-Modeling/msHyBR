@@ -1,7 +1,7 @@
 close all
 clear all
 
-load('Ex2_1_reproductible_results')
+load('Ex2_results')
 title_ex = 'Ex2_1';
 
 c1 = [0 0.4470 0.7410];

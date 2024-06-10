@@ -45,7 +45,6 @@ classdef matvecH_aug
         end % transpose
 
         function y = mtimes(A,x)
-            %load('H_final.mat');
             [mA,nA] = size(A.H);
 
             if A.transpose % transpose
@@ -60,8 +59,7 @@ classdef matvecH_aug
         end % mtimes
         
         function varargout = size(A,dim)
-            load('H_final.mat');
-            [mA,nA] = size(H);
+            [mA,nA] = size(A.H);
             d(1) = mA;
             d(2) = nA*A.n + A.nbeta;
             if nargout == 1 || nargout == 0
@@ -77,8 +75,7 @@ classdef matvecH_aug
         end % size
         
         function l = length(A)
-            load('H_final.mat');
-            [mA,nA] = size(H);
+            [mA,nA] = size(AH);
             if nA*A.n + A.nbeta > mA
                 l = nA*A.n + A.nbeta;
             else
