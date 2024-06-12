@@ -43,12 +43,13 @@ REFERENCE:
 SOFTWARE LANGUAGE:
 
        MATLAB 9.14 (R2023a)
-       For those without access to MATLAB, Octave provides an alternative platform.  Note that these codes have not been tested in Octave. 
+       For those without access to MATLAB, Octave provides an alternative platform.  
+       Note that these codes have not been tested in Octave. 
 
 
-=====================================================================
-SOFTWARE and DATA SETS
-=====================================================================
+
+## SOFTWARE and DATA SETS
+
 The MainDrivers require the following package:
 
     "IR tools: A MATLAB Package of Iterative Regularization"
@@ -93,19 +94,19 @@ To run these codes, open a MATLAB command window, and type
 
 For Experiment 2 in [1], the main drivers include:
 
-    generate_synthetic_data.m			Generate synthetic data with the same distribution than the one corresponding to
+    generate_synthetic_data.m		Generate synthetic data with the same distribution than the one corresponding to
 						Experiment 2 in [1]. (Note that these do not generate fully reproducible codes)
    
-    main_atmospheric_synthetic_problem.m       	Load synthetic problem 
+    main_atmospheric_synthetic_problem.m	Load synthetic problem 
 						(Optionally, generate new synthetic data instead running 'generate_synthetic_data.m')
-                                    		Run msHyBR
-                                    		Run 2 steps process: forward_selection + geostatistical_inversion
-                                    		(forward selection is done using the 'BIC' method)
+                                    	Run msHyBR
+                                    	Run 2 steps process: forward_selection + geostatistical_inversion
+                                    	(forward selection is done using the 'BIC' method)
                                     
     plots_atmospheric_synthetic_problem.m       Plot the results from 'main_atmospheric_synthetic_problem.m' including:
                                     		- Representation of the donation model in the problem formulation
                                     		- Solutions Reconstructions
-                                   		- Coefficient Reconstructions
+                                   			- Coefficient Reconstructions
                                     		- Relative error norm histories
                                     		- Representation of the selected basis vectors
                                     		Save figures in the folder 'Figures'
