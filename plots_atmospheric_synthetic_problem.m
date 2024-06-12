@@ -1,8 +1,8 @@
 close all
 clear all
 
-load('Ex2_results')
-title_ex = 'Ex2_1';
+load('atmospheric_synthetic_results')
+title_ex = 'atmospheric';
 
 c1 = [0 0.4470 0.7410];
 c2 = [0.8500 0.3250 0.0980];

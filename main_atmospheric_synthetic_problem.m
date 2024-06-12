@@ -111,4 +111,4 @@ input = HyBR_lsmrset('InSolv', 'tikhonov','RegPar','dp','Reorth','on','Iter', ma
 toc
 x_twostep=xbeta_genGKmean(1:11900);
 beta_twostep=xbeta_genGKmean(11901:end);
-save('Ex2_1_reproductible_results')
+save('atmospheric_synthetic_results')
