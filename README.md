@@ -2,7 +2,7 @@
 
 Here we provide MATLAB implementations of the model selection hybrid regularization method (msHybr), as well as two example scripts featuring a simple 1D deblurring problem and a synthetic atmospheric modeling problem.
 
-## Background
+## Project Description
 
 Hybrid regularization methods have been proposed as effective approaches for solving large-scale ill-posed inverse problems. In particular, the model selection hybrid regularization method (msHybr), is designed to incorporate predictor variables to help estimate natural processes or parameters of interest from observed data.
 
@@ -32,7 +32,7 @@ and require the data sets:
 
      - Put the matrix 'H_all_OCO2.mat' in the folder "Data/" 
 
-## Usage
+## How to Use
 For Experiment 1 in [1], the main drivers include:
     
     main_deblurring_problem.m       Generate synthetic problem 
