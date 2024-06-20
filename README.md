@@ -103,11 +103,11 @@ To run these codes, open a MATLAB command window, and type
 
 If you use this codes, you *must* cite the original authors:
 
-       [1] "A Joint Reconstruction and Model Selection Approach for Large Scale Inverse Modeling". 2024.
+       [1] Sabaté Landman et al. "A Joint Reconstruction and Model Selection Approach for Large Scale Inverse Modeling". 2024.
 
 
 [MIT](LICENSE)
 
 ## Acknowledgement
 
-This work was partially supported by the National Science Foundation ATD program under grants DMS-2208294, DMS-2341843, DMS-2026830, and DMS-2026835. Any opinions, findings, conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+This work was partially supported by the National Science Foundation under grants DMS-2208294, DMS-2341843, DMS-2026830, and DMS-2026835. Any opinions, findings, conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
